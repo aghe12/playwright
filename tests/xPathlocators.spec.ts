@@ -37,5 +37,35 @@ test("XPath demo in playwright", async ({ page }) => {
     await products.nth(3).textContent(), // index will start from 0
   );
 
-  let productTitles:string[]=await products.allTextContents();
+  let productTitles: string[] = await products.allTextContents();
+
+  //4. start-with()
+
+  const buildignProducts: Locator = page.locator(
+    "//h2/a[starts-with(@href, '/build')]",
+  ); // returns multiple elements
+
+  const count: number = await buildignProducts.count();
+  expect(count).toBeGreaterThan(0);
+
+  //5. text().
+
+  const reglink: Locator = page.locator("//a[text()='Register']");
+  await expect(reglink).toBeVisible();
+
+  //6. last()
+
+  const lastitem: Locator = page.locator(
+    "//div[@class='column follow-us']//li[last()]",
+  );
+  await expect(lastitem).toBeVisible();
+  console.log("Text content of last element: ", lastitem.textContent);
+
+  //7. position()
+
+  const positionitem: Locator = page.locator(
+    "//div[@class='column follow-us']//li[position(3)]",
+  );
+  await expect(positionitem).toBeVisible();
+  console.log("Text content of positinal element: ", positionitem.textContent);
 });
