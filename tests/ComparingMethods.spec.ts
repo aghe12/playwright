@@ -19,4 +19,8 @@ test("Comparing methods", async ({ page }) => {
   );
   const productNames: string[] = await products.allInnerTexts();
   console.log("Product Names captured by allInnerText():", productNames);
+
+
+  const productNamesTrimmed: string[] = productNames.map(text => text.trim());
+  console.log("product names after trimmed:", productNamesTrimmed);
 });
