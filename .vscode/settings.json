@@ -1,0 +1,19 @@
+{
+  "editor.experimental.preferTreeSitter.typescript": false,
+  "editor.tokenColorCustomizations": {
+    "comments": "#75be80",
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.line",
+          "comment.block",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "foreground": "#75be80"
+        }
+      }
+    ]
+  }
+}
