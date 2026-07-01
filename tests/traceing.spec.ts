@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test.only("traceing demo", async ({ page }) => {
+test("traceing demo", async ({ page }) => {
   await page.goto("https://www.demoblaze.com/index.html");
   await page.getByRole("link", { name: "Log in" }).click();
   await page.locator("#loginusername").fill("pavanol");

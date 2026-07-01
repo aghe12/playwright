@@ -22,7 +22,7 @@ test("screenshot demo", async ({ page }) => {
   });
 });
 
-test.only("screenshots from conflits demo", async ({ page }) => {
+test("screenshots from conflits demo", async ({ page }) => {
   await page.goto("https://www.demoblaze.com/index.html");
   await page.getByRole("link", { name: "Log in" }).click();
   await page.locator("#loginusername").fill("pavanol");

@@ -41,7 +41,7 @@ test("Radio Buttons actions", async ({ page }) => {
   await page.waitForTimeout(3000);
 });
 
-test.only("Radio Buttons actions on multiple radio buttons", async ({ page }) => {
+test("Radio Buttons actions on multiple radio buttons", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
 
   //1.select specific check box(sunday) using getByLabel and assert
