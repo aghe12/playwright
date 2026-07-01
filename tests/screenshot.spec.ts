@@ -16,7 +16,7 @@ test("screenshot demo", async ({ page }) => {
     fullPage: true,
   });
 
-  const logo = page.locator("img[alt='Tricentss Demo Web Shop']");
+  const logo = page.locator("img[alt='Tricentis Demo Web Shop']");
   logo.screenshot({
     path: "screenshots/" + "homepage" + timestamp + ".png",
   });

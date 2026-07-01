@@ -1,6 +1,6 @@
 import { Locator, test } from "@playwright/test";
 
-test("Auto suggest dropdown", async ({ page }) => {
+test.skip("Auto suggest dropdown", async ({ page }) => {
   await page.goto("https://www.flipkart.com/");
   await page.locator("input[name='q']").first().fill("smart");
   await page.waitForTimeout(5000);

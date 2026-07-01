@@ -46,7 +46,7 @@ test("Search for specific data in a table", async ({ page }) => {
     "https://datatables.net/examples/basic_init/table_sorting.html",
   );
 
-  const searchBox: Locator = page.locator("#td-search-0");
+  const searchBox: Locator = page.locator("#dt-search-0");
   await searchBox.fill("Paul Byrd");
 
   const rows = await page.locator("#example tbody tr").all();

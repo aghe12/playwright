@@ -64,7 +64,7 @@ test("XPath demo in playwright", async ({ page }) => {
   //7. position()
 
   const positionitem: Locator = page.locator(
-    "//div[@class='column follow-us']//li[position(3)]",
+    "//div[@class='column follow-us']//li[position()=3]",
   );
   await expect(positionitem).toBeVisible();
   console.log("Text content of positinal element: ", positionitem.textContent);

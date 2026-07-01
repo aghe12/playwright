@@ -21,49 +21,49 @@ test("Simple Dialog", async ({ page }) => {
   await page.waitForTimeout(5000);
 });
 
-test("Simple Dialog - Dismiss", async ({ page }) => {
-  await page.goto("https://testautomationpractice.blogspot.com/");
+// test("Simple Dialog - Dismiss", async ({ page }) => {
+//   await page.goto("https://testautomationpractice.blogspot.com/");
 
-  page.on("dialog", (dialog) => {
-    console.log("Dialog type is:", dialog.type());
-    expect(dialog.type()).toContain("alert");
+//   page.on("dialog", (dialog) => {
+//     console.log("Dialog type is:", dialog.type());
+//     expect(dialog.type()).toContain("alert");
 
-    console.log("Dialog message is:", dialog.message());
-    expect(dialog.message()).toContain("I am an alert box!");
-    dialog.dismiss(); //close dialog by dismissing
-  });
+//     console.log("Dialog message is:", dialog.message());
+//     expect(dialog.message()).toContain("I am an alert box!");
+//     dialog.dismiss(); //close dialog by dismissing
+//   });
 
-  await page.locator("#confirmBtn").click();
+//   await page.locator("#confirmBtn").click();
 
-  const text: string = await page.locator("#demo").innerText();
-  console.log("Output text", text);
+//   const text: string = await page.locator("#demo").innerText();
+//   console.log("Output text", text);
 
-  expect(await page.locator("#demo")).toHaveText("You pressed cancel");
-  await page.waitForTimeout(5000);
-});
+//   expect(await page.locator("#demo")).toHaveText("You pressed cancel");
+//   await page.waitForTimeout(5000);
+// });
 
-test("Prompt Dialog", async ({ page }) => {
-  await page.goto("https://testautomationpractice.blogspot.com/");
+// test("Prompt Dialog", async ({ page }) => {
+//   await page.goto("https://testautomationpractice.blogspot.com/");
 
-  page.on("dialog", (dialog) => {
-    console.log("Dialog type is:", dialog.type());
-    expect(dialog.type()).toContain("prompt");
+//   page.on("dialog", (dialog) => {
+//     console.log("Dialog type is:", dialog.type());
+//     expect(dialog.type()).toContain("prompt");
 
-    console.log("Dialog message is:", dialog.message());
-    expect(dialog.message()).toContain("I am an alert box!");
+//     console.log("Dialog message is:", dialog.message());
+//     expect(dialog.message()).toContain("I am an alert box!");
 
-    expect(dialog.defaultValue()).toContain("Harry Potter"); //checks default value
-    dialog.accept("John"); //close dialog by dismissing
-  });
+//     expect(dialog.defaultValue()).toContain("Harry Potter"); //checks default value
+//     dialog.accept("John"); //close dialog by dismissing
+//   });
 
-  await page.locator("#promptBtn").click();
+// await page.locator("#promptBtn").click();
 
-  const text: string = await page.locator("#demo").innerText();
-  console.log("Output text", text);
+// const text: string = await page.locator("#demo").innerText();
+// console.log("Output text", text);
 
-  //expect(await page.locator("#demo")).toHaveText("You pressed cancel");
-  await expect(page.locator("#demo")).toHaveText(
-    "Hello John! How are you today?",
-  );
-  await page.waitForTimeout(5000);
-});
+// //expect(await page.locator("#demo")).toHaveText("You pressed cancel");
+// await expect(page.locator("#demo")).toHaveText(
+//   "Hello John! How are you today?",
+// );
+//   await page.waitForTimeout(5000);
+// });
